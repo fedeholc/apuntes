@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import "./App.css";
 
 export default function App() {
@@ -17,12 +16,12 @@ export function MyForm() {
     email: "",
     comments: "",
     isFriendly: true,
-    employment: "unemployed", // en blanco para inicializar sin seleccionar
+    employment: "unemployed",
     favColor: "",
   });
 
   function handleClick(event: React.MouseEvent<HTMLButtonElement>) {
-    event.preventDefault(); //para que no haga refresh de la pág
+    event.preventDefault();  
     alert(JSON.stringify(formData, null, 2));
     console.log(formData);
   }
@@ -32,8 +31,8 @@ export function MyForm() {
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
     >
   ) {
-    const { name, value, type } = event.target;
 
+    const { name, value, type } = event.target;
     let checked: boolean;
 
     if (event.target instanceof HTMLInputElement) {
@@ -86,7 +85,7 @@ export function MyForm() {
             onChange={handleChange}
             name="isFriendly"
           />
-          Are you friendly?{" "}
+          Are you friendly?
         </label>
         <fieldset>
           <legend>Current employment status</legend>
